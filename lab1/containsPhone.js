@@ -1,5 +1,5 @@
-function isPhone(num){
-    const re = /^\(?\d{3}\)?(\s|-)?\d{3}(\s|-)?\d{4}$/;
+function containsPhone(num) {
+    const re = /\(?\d{3}\)?(\s|-)?\d{3}(\s|-)?\d{4}/;
     return re.test(num);
 }
 

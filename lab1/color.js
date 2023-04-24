@@ -3,13 +3,10 @@ function extractColorNumber(str) {
     const hex6 = /#[0-9A-F]{6}/;
     const hex3 = /#[0-9A-F]{3}([^\d]|$)/;
     const rgbD = /RGB\((\d{1,3},\s?){2}\d{1,3}\)/;
-
     const rgbP = /RGB\((\d{1,3}%,\s?){2}\d{1,3}%\)/;
-
     let result = null;
     if (hex6.test(str)) {
         return hex6.exec(str)[0];
-
     } else if (hex3.test(str)) {
         return hex3.exec(str)[0].split('').map(x => x + x).join('').substring(1);
     } else if (rgbD.test(str)) {
@@ -22,10 +19,8 @@ function extractColorNumber(str) {
             .match(/\d{1,3}/g)
             .map(x => (parseInt(x) * 2.55 | 0).toString(16).toUpperCase().padStart(2, '0'))
             .join('');
-
     } else {
         return null;
-
     }
 
     return hex6.test(result) && [4, 7].includes(result.length) ? result : null;
