@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<style>
+  *,
+  *::before,
+  *::after {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+
+    background: linear-gradient(to left, #bce6ed, #638ceb);
+  }
+
+  .calc-grid {
+    display: flex;
+    margin-top: 5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calc {
+    grid-column: 1/-1;
+    background-color: rgba(32, 31, 31, 0.75);
+    display: grid;
+    grid-template-columns: repeat(6, 6rem);
+
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.7rem;
+
+    word-wrap: break-word;
+    word-break: break-all;
+
+    border: none;
+    border-radius: 7px;
+  }
+
+  input {
+    grid-column: span 6;
+    background-color: rgb(3, 40, 50);
+    border: 1px solid #638cec;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 40px;
+    padding: 10px;
+    margin: 30px 0px 30px 0px;
+    color: white;
+  }
+
+  .calc>button {
+    cursor: pointer;
+
+    font-size: 2rem;
+    border: 1px solid #638cec;
+
+    /* 
+  border:none;
+  border-radius:50%;
+  box-shadow: in
+  */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(32, 31, 31, 0.75);
+  }
+
+  .calc>button:hover,
+  .calc>button:focus {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .bottom-right {
+    border-bottom-right-radius: 5px;
+  }
+
+  .bottom-left {
+    border-bottom-left-radius: 5px;
+  }
+
+  .span-two {
+    grid-column: span 2;
+  }
+
+  .upper {
+    background-color: rgb(229, 127, 127) !important;
+  }
+</style>
+
+<body>
+  SCI CAL
+  <div class="calc-grid">
+    <!--container -->
+
+
+    <div class="calc">
+      <!--buttons-->
+      <input type="text" id="inputxt" placeholder="0">
+
+      <button class="button upper" id="clear">C</button>
+      <button class="button upper" id="del">⌫</button>
+      <button class="dig-btn upper" id="div">÷</button>
+      <button class="dig-btn upper" id="%">%</button>
+      <button class="dig-btn upper" id="sin">sin</button>
+      <button class="dig-btn upper" id="pow">pow</button>
+
+      <button class="btn-nmbr" id="1">1</button>
+      <button class="btn-nmbr" id="2">2</button>
+      <button class="btn-nmbr" id="3">3</button>
+      <button class="dig-btn" id="+">+</button>
+      <button class="dig-btn" id="cos">cos </button>
+      <button class="dig-btn" id="log">log</button>
+
+
+      <button class="btn-nmbr" id="4">4</button>
+      <button class="btn-nmbr" id="5">5</button>
+      <button class="btn-nmbr" id="6">6</button>
+      <button class="dig-btn" id="-">-</button>
+      <button class="dig-btn" id="tan">tan</button>
+      <button class="dig-btn" id="log10">log10</button>
+
+
+      <button class="btn-nmbr" id="7">7</button>
+      <button class="btn-nmbr" id="8">8</button>
+      <button class="btn-nmbr" id="9">9</button>
+      <button class="dig-btn" id="*">*</button>
+      <button class="dig-btn" id="abs">abs</button>
+      <button class="dig-btn" id="n!">n!</button>
+      <button id="." class="bottom-left dig-btn">.</button>
+      <button class="btn-nmbr" id="0">0</button>
+      <button class="dig-btn" id="(">(</button>
+      <button class="dig-btn" id=")">)</button>
+      <button type="button" class="eq-btn span-two bottom-right" id="equal">=</button>
+      <script src="script.js" type="text/javascript"></script>
+
+    </div>
+  </div>
+</body>
+
+<script src="./scical.js">
+
+</script>
+
+</html>

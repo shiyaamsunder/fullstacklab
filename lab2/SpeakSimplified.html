@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speak Simplified</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<style>
+  .input {
+    width: 300px;
+    padding: 8px 4px;
+    border-radius: 10px;
+    border: 2px solid palevioletred;
+    outline: none;
+
+    margin-bottom: 24px;
+
+
+  }
+
+
+  #btn_submit {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 8px;
+    border-radius: 10px;
+    border: 2px solid rgb(159, 91, 222);
+    transition: 120ms all ease-in-out;
+
+  }
+
+  #btn_submit:hover {
+    background-color: rgb(159, 91, 222);
+    color: white;
+
+    cursor: pointer;
+
+  }
+
+
+  #btn_submit:active {
+    transform: scale(95%);
+  }
+
+  .input:focus {
+    outline-offset: 2px;
+    outline: 2px solid pink;
+  }
+
+  .form {
+    padding: 20px;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto;
+  }
+
+  .list_item {
+    margin: 8px 0px;
+  }
+</style>
+
+<body>
+  <main>
+
+    <form class="form">
+      <h1>Speak Simplified</h1>
+
+
+      <input required type="text" class="input" id="input" name="string">
+      <button type="submit" id="btn_submit">Submit</button>
+
+      <div class="result">
+        <ul id="result_list">
+
+
+        </ul>
+      </div>
+    </form>
+  </main>
+</body>
+
+
+<script src="./SpeakSimplified.js"></script>
+
+</html>

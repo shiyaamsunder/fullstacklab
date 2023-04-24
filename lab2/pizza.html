@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  .label {
+    margin-right: 10px;
+  }
+
+  select {
+    padding: 12px 8px;
+    width: 200px;
+  }
+
+
+
+  .extra {
+    align-items: start;
+  }
+</style>
+
+<body>
+
+  <main class="center flex_col_center">
+    <h1>PizzaCorner</h1>
+
+
+    <form action="" class="form" id="form">
+      <div class="flex_row_center">
+        <label for="size" class="label">Plain thin crust Pizzas: </label>
+        <select name="size" id="size">
+          <option value="99">Small: ₹99</option>
+          <option value="199">Medium: ₹199</option>
+          <option value="399">Large: ₹399</option>
+        </select>
+      </div>
+      <div class="flex_row_center">
+        <input type="checkbox" name="deepPan" id="deepPan" value="20">
+        <label for="deepPan">Deep Pan ₹20</label>
+      </div>
+      <div class="extra_toppings flex_col_center extra">
+        <p>Extra Toppings</p>
+        <div class="flex_row_center">
+          <input type="checkbox" name="mushrooms" id="mushrooms" value="15">
+          <label for="mushrooms" class="label">Mushrooms ₹15</label>
+        </div>
+        <div class="flex_row_center">
+          <input type="checkbox" name="olives" id="olives" value="10">
+          <label for="olives" class="label">Olives ₹10</label>
+        </div>
+        <div class="flex_row_center">
+          <input type="checkbox" name="fingernail" id="fingernail" value="30">
+          <label for="fingernail" class="label">Fingernail ₹30</label>
+        </div>
+        <div class="flex_row_center">
+          <input type="checkbox" name="spicybeef" id="spicybeef" value="20">
+          <label for="spicybeef" class="label">Spicy Beef ₹20</label>
+        </div>
+      </div>
+      <div class="flex_row_center">
+        <input type="checkbox" name="homedelivery" id="homedelivery" value="25">
+        <label for="homedelivery">Home Delivery ₹25</label>
+      </div>
+      <button type="submit" id="submit" class="btn">Estimate</button>
+    </form>
+    <div id="cost">
+      Cost Estimate: ₹0
+    </div>
+  </main>
+</body>
+
+<script>
+  let totalCost = 0;
+  let costElement = document.getElementById("cost")
+  let form = document.getElementById("form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    new FormData(form)
+  })
+
+  form.addEventListener("formdata", (e) => {
+    let formdata = e.formData
+
+    let size = Number(formdata.get("size"))
+    let deepPan = Number(formdata.get("deepPan")) || 0
+    let mush = Number(formdata.get("mushrooms")) || 0;
+    let olv = Number(formdata.get("olives")) || 0;
+    let fn = Number(formdata.get("fingernail")) || 0;
+    let sp = Number(formdata.get("spicybeef")) || 0;
+    let hd = Number(formdata.get("homedelivery")) || 0;
+
+
+    totalCost = size + deepPan + mush + olv + fn + sp + hd;
+    costElement.innerText = `Cost Estimate: ₹${totalCost}`
+  })
+</script>
+
+</html>
