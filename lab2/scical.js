@@ -44,7 +44,14 @@ function addNumber(e) {
 // Function to add an operator to the input field
 function addOperator(e) {
   const op = e.target.textContent;
-  console.log(op);
+  if(op === "sin"){
+
+    console.log(Math.sin(Number(input.value * Math.PI/180)))
+
+  }
+  else input.value+=op;
+  
+
 }
 
 

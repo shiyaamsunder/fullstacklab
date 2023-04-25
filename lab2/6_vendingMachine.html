@@ -19,15 +19,41 @@
   .wrapper:hover{
     box-shadow: 8px 8px #ff676779;
   }
+
+  #result {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: fit-content;
+    margin:0px auto;
+  }
+
+  select{
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+
+  .bottom {
+    width: fit-content;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  
 </style>
 
 <body>
 
-  <main class="wrapper">
-    <div>
+  <main class="wrapper flex flex_col_center">
+    <div class="inner">
       <div id="message"></div>
       <div id="result"></div>
-      <div class="center">
+      <div class="center bottom">
         <select name="item" id="item">
           <option value="1" selected>Four line notebook</option>
           <option value="2">Two line notebook</option>
@@ -35,8 +61,10 @@
           <option value="4">Eraser</option>
           <option value="5">Drawing notebook</option>
         </select>
+        <div>
         <button type="button" id="buy_btn">Buy</button>
         <button type="button" id="stock_btn">Stock</button>
+        </div>
       </div>
     </div>
 
