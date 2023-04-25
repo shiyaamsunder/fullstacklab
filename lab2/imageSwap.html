@@ -1,39 +1,73 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!---->
+<!-- <head> -->
+<!--   <title>Color Swapper</title> -->
+<!--   <meta charset="UTF-8"> -->
+<!--   <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<!--   <link href="style.css" rel="stylesheet"> -->
+<!-- </head> -->
+<!---->
+<!-- <style> -->
+<!--   main { -->
+<!--     border: 2px solid pink; -->
+<!--     padding: 8px; -->
+<!--     width: fit-content; -->
+<!--   } -->
+<!---->
+<!--   main img { -->
+<!--     width: 150px; -->
+<!--   } -->
+<!-- </style> -->
+<!---->
+<!-- <body> -->
+<!---->
+<!---->
+<!--   <main id="img_container" class="flex flex_col_center"> -->
+<!--     <img id="1" src="./assets/red.png" alt="red"> -->
+<!--     <img id="2" src="./assets/white.png" alt="white"> -->
+<!--     <img id="3" src="./assets/blue.png" alt="blue"> -->
+<!--     <img id="4" src="./assets/green.png" alt="green"> -->
+<!--     <img id="5" src="./assets/black.png" alt="black"> -->
+<!--   </main> -->
+<!-- </body> -->
+<!---->
+<!---->
+<!-- <script src="./imageSwap.js"> -->
+<!-- </script> -->
+<!---->
+<!-- </html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Color Swapper</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="style.css" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Swapper</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <style>
-  main {
-    border: 2px solid pink;
-    padding: 8px;
-    width: fit-content;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    /* remove extra space below image */
   }
 
-  main img {
-    width: 150px;
+  #box {
+    width: 250px;
+
   }
 </style>
 
 <body>
-
-
-  <main id="img_container" class="flex flex_col_center">
-    <img id="1" src="./assets/red.png" alt="red">
-    <img id="2" src="./assets/white.png" alt="white">
-    <img id="3" src="./assets/blue.png" alt="blue">
-    <img id="4" src="./assets/green.png" alt="green">
-    <img id="5" src="./assets/black.png" alt="black">
-  </main>
+  <div id="box">
+    <img src="./assets/black.png" id="imgChange" onclick="change_img()">
+  </div>
+  <script src="./imageSwap.js"></script>
 </body>
-
-
-<script src="./imageSwap.js">
-</script>
 
 </html>
