@@ -45,10 +45,6 @@ function addNumber(e) {
 function addOperator(e) {
   const op = e.target.textContent;
   console.log(op);
-
-  if(op === "sin"){
-    
-  }
 }
 
 
