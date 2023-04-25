@@ -17,10 +17,7 @@
     border-radius: 10px;
     border: 2px solid palevioletred;
     outline: none;
-
     margin-bottom: 24px;
-
-
   }
 
 
@@ -37,9 +34,7 @@
   #btn_submit:hover {
     background-color: rgb(159, 91, 222);
     color: white;
-
     cursor: pointer;
-
   }
 
 
@@ -65,22 +60,35 @@
   .list_item {
     margin: 8px 0px;
   }
+
+  .result {
+    border-radius: 12px;
+    border: 2px dotted green;
+    margin: 12px 0px;
+    padding: 16px;
+  }
+
+  .main{
+    min-height: 90vh;
+    border: 2px solid #ff0000;
+    border-radius: 12px;
+    transition: all 120ms ease-in-out;
+  }
+
+  .main:hover{
+    box-shadow: 8px 8px #ff676779;
+  }
 </style>
 
 <body>
-  <main>
+  <main class="main">
 
     <form class="form">
       <h1>Speak Simplified</h1>
-
-
       <input required type="text" class="input" id="input" name="string">
       <button type="submit" id="btn_submit">Submit</button>
-
-      <div class="result">
+      <div class="result" id="result" hidden>
         <ul id="result_list">
-
-
         </ul>
       </div>
     </form>

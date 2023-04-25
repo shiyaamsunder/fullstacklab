@@ -16,6 +16,7 @@
   select {
     padding: 12px 8px;
     width: 200px;
+    border-radius: 12px;
   }
 
   .extra {
@@ -31,17 +32,30 @@
     margin: 24px auto;
   }
 
-  .wrapper {
-    border: 2px solid gray;
-    border-radius: 8px;
-
-    padding: 12px 24px;
+  .wrapper{
+    min-height: 90vh;
+    border: 2px solid #ff0000;
+    border-radius: 12px;
+    transition: all 120ms ease-in-out;
   }
+
+  .wrapper:hover{
+    box-shadow: 8px 8px #ff676779;
+  }
+    img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+  }
+
+
 </style>
 
 <body>
 
   <main class="center flex_col_center wrapper">
+    <img src="https://media.istockphoto.com/id/1253496654/vector/best-italian-pizza-banner-with-ribbon-tomato-cheese-mozzarella-flour-delicious-slices.jpg?s=170667a&w=0&k=20&c=G2RB0dr-4i3dAPx3EXjCi8ZOZ7_SPPl6wvaxvLakXOs=" alt="" srcset="">
     <h1>PizzaCorner</h1>
     <form action="" class="form" id="form">
       <div class="flex_row_center my-12">

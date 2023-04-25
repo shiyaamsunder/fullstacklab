@@ -16,3 +16,14 @@ console.log(isPhone('111_111_111'));
 console.log(isPhone('111  111  111'));
 console.log(isPhone('(111) 111--1111'));
 console.log(isPhone('[111]111-1111'));
+
+const input = document.getElementById("inp")
+const result = document.getElementById("result")
+
+result.innerText = "Not a valid phone number"
+
+input.addEventListener("keyup", (e)=> {
+    let resultString = isPhone(e.target.value) ?"Valid phone number" : "Not a valid phone number"
+    console.log(resultString)
+    result.innerText = resultString
+})

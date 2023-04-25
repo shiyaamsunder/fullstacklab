@@ -37,3 +37,14 @@ console.log(extractColorNumber('#1234GH'));
 console.log(extractColorNumber('#1234'));
 console.log(extractColorNumber('rgb(18,52,286)'));
 console.log(extractColorNumber('rgb(7%, 20%, 134%)'));
+
+
+const input = document.getElementById("inp")
+const result = document.getElementById("result")
+
+
+input.addEventListener("keyup", (e)=> {
+    let resultString = extractColorNumber(e.target.value)  || "Not a valid color"
+    console.log(resultString)
+    result.innerText = resultString
+})

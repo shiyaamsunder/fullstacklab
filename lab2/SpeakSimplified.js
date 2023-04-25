@@ -26,5 +26,6 @@ form.addEventListener("formdata", (e)=> {
         <li class="list_item">${strengthen(inputString)}</li>
         <li class="list_item">${emphasize(inputString)}</li>
     `
+    document.getElementById("result").hidden = false;
     document.getElementById("result_list").innerHTML = outPutHtml;
 })
