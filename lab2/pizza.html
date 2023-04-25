@@ -18,21 +18,33 @@
     width: 200px;
   }
 
-
-
   .extra {
     align-items: start;
+  }
+
+  .my-12 {
+    margin: 12px 0px;
+  }
+
+  #submit {
+    display: block;
+    margin: 24px auto;
+  }
+
+  .wrapper {
+    border: 2px solid gray;
+    border-radius: 8px;
+
+    padding: 12px 24px;
   }
 </style>
 
 <body>
 
-  <main class="center flex_col_center">
+  <main class="center flex_col_center wrapper">
     <h1>PizzaCorner</h1>
-
-
     <form action="" class="form" id="form">
-      <div class="flex_row_center">
+      <div class="flex_row_center my-12">
         <label for="size" class="label">Plain thin crust Pizzas: </label>
         <select name="size" id="size">
           <option value="99">Small: ₹99</option>
@@ -40,11 +52,11 @@
           <option value="399">Large: ₹399</option>
         </select>
       </div>
-      <div class="flex_row_center">
+      <div class="flex_row_center my-12">
         <input type="checkbox" name="deepPan" id="deepPan" value="20">
         <label for="deepPan">Deep Pan ₹20</label>
       </div>
-      <div class="extra_toppings flex_col_center extra">
+      <div class="extra_toppings flex_col_center extra my-12">
         <p>Extra Toppings</p>
         <div class="flex_row_center">
           <input type="checkbox" name="mushrooms" id="mushrooms" value="15">
@@ -63,11 +75,13 @@
           <label for="spicybeef" class="label">Spicy Beef ₹20</label>
         </div>
       </div>
-      <div class="flex_row_center">
+      <div class="flex_row_center my-12">
         <input type="checkbox" name="homedelivery" id="homedelivery" value="25">
         <label for="homedelivery">Home Delivery ₹25</label>
       </div>
-      <button type="submit" id="submit" class="btn">Estimate</button>
+      <div class="btn_wrapper">
+        <button type="submit" id="submit" class="btn">Estimate</button>
+      </div>
     </form>
     <div id="cost">
       Cost Estimate: ₹0
