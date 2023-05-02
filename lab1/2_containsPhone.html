@@ -5,13 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contains phone</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
+<style>
+
+  .form_control {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form_control input, textarea{
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid gray;
+    outline: 0px;
+    margin: 12px 0px;
+  }
+
+.form_control input:focus, textarea:focus {
+      box-shadow: 2px 2px rgba(128, 128, 128, 0.484);
+
+    }
+</style>
 <body>
     
+    <div class="form_control">
+
     <label for="num">Enter a text containing phone number: </label>
     <textarea type="text" name="num" id="inp"></textarea>
-
     <div class="result" id="result"></div>
+    </div>
 </body>
 <script src="./containsPhone.js"></script>
 </html>

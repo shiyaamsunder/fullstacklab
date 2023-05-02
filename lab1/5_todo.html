@@ -6,11 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <style>
-  .form_control {
-    margin: 10px 0;
+  .top{
+    width: fit-content;
+    margin: 0px auto;
   }
 
   .form_label {
@@ -19,8 +21,12 @@
 </style>
 
 <body>
+  <main>
+
+    <div class="top">
 
   <h1>To Do List</h1>
+    </div>
 
   <div class="form_control">
     <label for="add_task_input" class="form_label">Add Task: </label>
@@ -38,6 +44,7 @@
     <input type="text" class="form_input" id="next_task_input">
     <button class="btn" id="next_task_btn">Show Next Task</button>
   </div>
+  </main>
 </body>
 
 <script src="./task.js"></script>

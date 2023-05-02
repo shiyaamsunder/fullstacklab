@@ -1,0 +1,69 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+main {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.center {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.flex_row_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex_col_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 100%;
+  max-width: 200px;
+  padding: 12px 8px;
+  border-radius: 10px;
+  border: 2px solid rgb(159, 91, 222);
+  transition: 120ms all ease-in-out;
+}
+
+.btn:hover {
+  background-color: rgb(159, 91, 222);
+  color: white;
+
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(95%);
+}
+
+  .form_control {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form_control input, textarea{
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid gray;
+    outline: 0px;
+    margin: 12px 0px;
+  }
+
+.form_control input:focus, textarea:focus {
+      box-shadow: 2px 2px rgba(128, 128, 128, 0.484);
+
+    }

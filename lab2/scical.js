@@ -36,18 +36,24 @@ function deleteChar() {
 // Function to add a number to the input field
 function addNumber(e) {
   const num = e.target.textContent;
+
   input.value += num;
+
+  if(input.value.length > 1 && input.value[0]=="0"){
+    input.value = input.value.slice(1)
+  }
 
 }
 
 
 // Function to add an operator to the input field
 function addOperator(e) {
-  const op = e.target.textContent;
+  const op = e.target.textContent.trim();
   if(op === "sin"){
     input.value  = Math.sin(Number(input.value * Math.PI/180))
   }
-  else if(op === "cos"){
+  else if(op=== "cos"){
+  console.log(op);
     input.value  = Math.cos(Number(input.value * Math.PI/180))
   }
   else if(op === "tan"){
