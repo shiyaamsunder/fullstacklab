@@ -35,7 +35,7 @@ const productsWrapper = document.getElementById("products__wrapper");
   const addToCart = (product) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     let found = cart.find(c => c.id === product.id);
-    if (found) {
+    if (found && product && cart.length > 0) {
       const updatedCart = cart.map(c => (c.id === product.id ? { ...c, amount: c.amount + 1 } : c));
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
