@@ -1,0 +1,21 @@
+#products__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+
+}
+
+.product__card {
+  border: 1px solid gray;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product__image {
+  max-height: 250px;
+  margin-bottom: 16px;
+}
