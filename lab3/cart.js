@@ -1,5 +1,4 @@
 
-
 const generateCartString = (cart) => {
   let cartString = "";
   cart.forEach(({ title, image, price, id, amount }) => {
@@ -30,7 +29,6 @@ const generateCartString = (cart) => {
       </div>
     `
   })
-
   return cartString;
 }
 
@@ -39,13 +37,13 @@ const generateCartString = (cart) => {
 const generateCart = () => {
   const cartWrapper = document.getElementById("products__wrapper");
   cartWrapper.innerHTML = "";
-  const cart = JSON.parse(localStorage.getItem("cart"));
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartString = cart.length > 0 ? generateCartString(cart) : `<div class="m-3">Cart is Empty</div>`
   cartWrapper.innerHTML = cartString;
 }
 
 function removeOne(id) {
-  const cart = JSON.parse(localStorage.getItem("cart"));
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const item = cart.filter(c => c.id === id)[0];
   let updatedCart
   if (item.amount != 1) {
@@ -61,7 +59,7 @@ function removeOne(id) {
 
 
 const removeAll = (id) => {
-  const cart = JSON.parse(localStorage.getItem("cart"));
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   let updatedCart = cart.filter(c => c.id != id);
   localStorage.setItem("cart", JSON.stringify(updatedCart));
   location.reload();

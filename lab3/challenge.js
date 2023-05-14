@@ -1,9 +1,16 @@
 const year = document.getElementById("year");
+const dateTime = document.getElementById("date_time");
+
+
 
 const randomColor = function() {
   return Math.floor(Math.random() * 16777215).toString(16);
 }
 
+setInterval(() => {
+  dateTime.innerText = `Date: ${new Date().toLocaleDateString('en-GB')} Time: ${new Date().toLocaleTimeString()}`
+  dateTime.style.backgroundColor = `#${randomColor()}`
+}, 1000);
 setInterval(() => {
   year.style = `color: #${randomColor()}`;
 }, 3000);
