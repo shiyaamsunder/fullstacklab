@@ -44,6 +44,7 @@ const generateCart = () => {
 
 function removeOne(id) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  console.log(cart);
   const item = cart.filter(c => c.id === id)[0];
   let updatedCart
   if (item.amount != 1) {
@@ -69,12 +70,14 @@ const addOne = (id) => {
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   let found = cart.find(c => c.id === id);
-  const product = cart.filter(c => c.id === id)[0];
+  let products = JSON.parse(localStorage.getItem("products")) || [];
+  console.log(found);
   if (found) {
     const updatedCart = cart.map(c => (c.id === id ? { ...c, amount: c.amount + 1 } : c));
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   }
   else {
+    const product = products.filter(c => c.id === id)[0];
     cart.push({
       ...product,
       amount: 1

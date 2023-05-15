@@ -1,3 +1,14 @@
+let products;
+
+const loadProductsFromJSON = async () => {
+  const res = await fetch("./products.json");
+  const products = await res.json();
+  localStorage.setItem("products", JSON.stringify(products));
+  location.reload();
+
+}
+
+
 const generateProducts = (products) => {
   let productsString = "";
   products.forEach(({ title, image, price, id }) => {
@@ -21,9 +32,14 @@ const generateProducts = (products) => {
 
 const productsWrapper = document.getElementById("products__wrapper");
 (async () => {
-  const res = await fetch("./products.json");
-  const products = await res.json();
-  productsWrapper.innerHTML = generateProducts(products);
+  products = JSON.parse(localStorage.getItem("products")) || [];
+  if (products.length == 0) {
+    productsWrapper.innerHTML = `<div><h3>Load Products</h3><button onclick="loadProductsFromJSON()" class="btn btn-primary">Load</button>`
+    return;
+  }
+  else {
+    productsWrapper.innerHTML = generateProducts(products);
+  }
   const addToCartBtn = document.querySelectorAll("#add_to_cart");
   addToCartBtn.forEach(b => b.addEventListener("click", (e) => {
     const pid = e.target.getAttribute("data-pid");
