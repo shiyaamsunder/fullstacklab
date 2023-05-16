@@ -12,7 +12,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" >
     <div class="container-fluid">
       <a class="navbar-brand" href="./shopping.html">MoreBuy</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -33,7 +33,7 @@
   <div class="container">
     <div class="container-sm border rounded m-3 p-3">
 
-      <h2>Add an Product</h2>
+      <h2>Add a Product</h2>
       <form id="form">
         <div class="mb-3">
           <label for="product_title" class="form-label">Product Title</label>
@@ -64,10 +64,31 @@
           <label for="product_price" class="form-label">Product Price</label>
           <input required type="number" class="form-control" name="price" id="product_price">
         </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" checked type="radio" name="add" id="add_last_radio">
+            <label class="form-check-label" for="add_last_radio">
+              Add Last
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="add" id="add_before_radio">
+            <label class="form-check-label" for="add_before_radio">
+              Add Before
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="add" id="add_after_radio">
+            <label class="form-check-label" for="add_after_radio">
+              Add After
+            </label>
+          </div>
+          <input type="number" placeholder="Enter product position" name="pid" class="form-control" id="pid">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-    </div>
-    <div class="container" id="products__wrapper"></div>
+      
+    <div class="container mt-4" id="products__wrapper"></div>
   </div>
 </body>
 
@@ -78,136 +99,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-<script>
-
-  const imgUrl = document.getElementById("product_img");
-  const imgFile = document.getElementById("file");
-  const imgUploadRadio = document.getElementById("img_upload_radio");
-  const imgURLRadio = document.getElementById("img_url_radio");
-
-
-
-
-  imgFile.style.display = 'none';
-
-
-  imgUploadRadio.addEventListener("click", (e) => {
-    if (imgUploadRadio.checked) {
-      imgFile.style.display = 'block';
-      imgUrl.style.display = 'none'
-    }
-
-  })
-
-  imgURLRadio.addEventListener("click", (e) => {
-
-    if (imgURLRadio.checked) {
-      imgFile.style.display = 'none';
-      imgUrl.style.display = 'block'
-    }
-
-  })
-  const form = document.getElementById("form");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    new FormData(form);
-  })
-
-
-  form.addEventListener("formdata", async (e) => {
-    let {formData} = e;
-
-    let image = formData.get("image")
-    let file = document.getElementById("file").files[0];
-    let base64;
-    if (file) {
-      image = await convertBase64(file);
-    }
-    const product = {
-      title: formData.get("title"),
-      image,
-      description: formData.get("desc"),
-      price: Number(formData.get("price")),
-    }
-
-    console.log(product);
-    const products = JSON.parse(localStorage.getItem("products")) || []
-
-    products.push({id: products.length + 1, ...product})
-    localStorage.setItem("products", JSON.stringify(products))
-    location.reload();
-
-  })
-
-
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
-
-
-  const generateProducts = (products) => {
-    let productsString = "";
-    products.forEach(({title, image, description, price, id}) => {
-      productsString += `<div class="product__card" style="width: 18rem;">
-      <img src="${image}" class="product__image"
-    alt="${title}">
-      <div class="product__body">
-      <div class="details">
-      <h3 class="card-text">${title}</h3>
-      <p class="card-text">${description}</p>
-      <p class="card-text">&#8377; ${price}</p>
-      </div>
-      <button class="btn btn-primary mt-3" id="remove_btn" data-pid=${id}>Remove</button>
-      </div>
-      </div>
-    `
-
-    })
-
-    return productsString;
-  }
-
-  const loadProductsFromJSON = async () => {
-    const res = await fetch("./products.json");
-    const products = await res.json();
-    localStorage.setItem("products", JSON.stringify(products));
-    location.reload();
-
-  }
-  const productsWrapper = document.getElementById("products__wrapper");
-  products = JSON.parse(localStorage.getItem("products")) || [];
-  if (products.length == 0) {
-    productsWrapper.innerHTML = `<div><h3>Load Products</h3><button onclick="loadProductsFromJSON()" class="btn btn-primary">Load</button>`
-  }
-  else {
-    productsWrapper.innerHTML = generateProducts(products);
-  }
-
-  const removeItem = (id) => {
-    const products = JSON.parse(localStorage.getItem("products")) || [];
-    let updatedProducts = products.filter(c => c.id != id);
-    localStorage.setItem("products", JSON.stringify(updatedProducts));
-    location.reload();
-  }
-
-
-  const removeFromCartBtn = document.querySelectorAll("#remove_btn");
-  removeFromCartBtn.forEach(b => b.addEventListener("click", (e) => {
-    removeItem(Number(e.target.getAttribute("data-pid")))
-  }));
-
-</script>
+<script src="./addProduct.js"></script>
 
 </html>

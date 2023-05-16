@@ -1,5 +1,6 @@
 #products__wrapper {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 50px;
 
@@ -18,4 +19,9 @@
 .product__image {
   max-height: 250px;
   margin-bottom: 16px;
+}
+
+.navb {
+  background-color: white !important;
+  color: black !important;
 }
