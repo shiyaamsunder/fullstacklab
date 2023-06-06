@@ -1,0 +1,53 @@
+#root {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+input {
+  padding: 12px 4px;
+  border-radius: 8px;
+  border: 1px solid lightpink;
+  outline: 0px;
+
+}
+
+
+
+.main__wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+.wrapper {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.item {
+  
+  display: flex;
+  gap:1rem;
+  margin: 0.4rem;
+  font-weight: 500;
+  
+}
+
+.item__left{
+  padding: 0.8rem;
+  border: 1px solid gray;
+  border-radius: 8px;
+  width: 80%;
+  text-align: right;
+  color: #8b8bff;
+}
+
+.item__right {
+  padding: 0.8rem;
+  border: 1px solid gray;
+  border-radius: 8px;
+  min-width: 40px;
+  color:lightpink;
+}

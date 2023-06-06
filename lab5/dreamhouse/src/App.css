@@ -1,0 +1,44 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.inputs {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+.input__label {
+  margin-left: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.input__wrapper {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input {
+  padding: 8px 8px;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 2px solid #ae53f6;
+  margin: 8px;
+  transition: all 120ms ease;
+}
+
+.input:focus{
+  outline:2px solid #cd8dff;
+  outline-offset: 2px;
+}
+
+.months {
+  margin-top: 1rem;
+}
