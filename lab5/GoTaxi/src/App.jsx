@@ -1,13 +1,17 @@
 import { useState } from 'react'
-import { Input } from './components'
-import { BookingSlip } from './components/BookingSlip'
+import { BookingSlip, Input } from './components'
 
+// function to calculate distance based on lat and lon
 import haversine from 'haversine-distance'
+
 import './App.css'
+
+// Static image assets
 import SUV from './assets/suv.png'
 import Sedan from './assets/sedan.png'
 import HB from './assets/hatchback.png'
 
+// cities data with lat and lon
 import cities from './data/cities'
 
 function App() {
@@ -16,12 +20,16 @@ function App() {
   const [pricePerKm, setPricePerKm] = useState(15)
   const [price, setPrice] = useState(0)
 
+  // car data
   const carOptions = [
     { value: 15, text: 'HatchBack ₹15/km', type: 'Hatchback', image: HB },
     { value: 20, text: 'Sedan ₹20/km', type: 'Sedan', image: Sedan },
     { value: 30, text: 'SUV ₹30/km', type: 'SUV', image: SUV },
   ]
 
+  // separate Handlers for source and destination city selection
+  // the reason for creating a handler is that the setting function is
+  // passed into the component.
   const handleFromInputClick = (value) => {
     setFrom(value)
   }
@@ -32,10 +40,12 @@ function App() {
   const handleBooking = () => {
     const distance = Math.round(
       haversine(fetchCity(cities, from), fetchCity(cities, to)) / 1000
-    )
+    ) // calculating the distance
+
     setPrice(distance * pricePerKm)
   }
 
+  // filtering out a single city
   const fetchCity = (arr, name) => {
     return arr.filter((c) => c.name === name)[0]
   }
@@ -60,6 +70,7 @@ function App() {
           onChange={(e) => setTo(e.target.value)}
           onOptionClick={handleToInputClick}
         />
+
         <Input
           name='datetime'
           type='datetime-local'
@@ -78,7 +89,7 @@ function App() {
         <button
           type='button'
           onClick={handleBooking}
-          disabled={from.length == 0 && to.length == 0}
+          disabled={from.length == 0 && to.length == 0} // enable button only if source and destintation is entered
         >
           Book
         </button>

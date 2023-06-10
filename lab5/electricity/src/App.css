@@ -9,10 +9,8 @@ input {
   border-radius: 8px;
   border: 1px solid lightpink;
   outline: 0px;
-
+  margin: 0 12px;
 }
-
-
 
 .main__wrapper {
   width: 50%;
@@ -27,15 +25,13 @@ input {
 }
 
 .item {
-  
   display: flex;
-  gap:1rem;
+  gap: 1rem;
   margin: 0.4rem;
   font-weight: 500;
-  
 }
 
-.item__left{
+.item__left {
   padding: 0.8rem;
   border: 1px solid gray;
   border-radius: 8px;
@@ -49,5 +45,5 @@ input {
   border: 1px solid gray;
   border-radius: 8px;
   min-width: 40px;
-  color:lightpink;
+  color: lightpink;
 }
