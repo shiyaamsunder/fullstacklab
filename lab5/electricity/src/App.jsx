@@ -31,9 +31,12 @@ function App() {
 
     if (units == 0) {
       alert("Enter valid units");
+      return
     }
     setNetAmount(calculateBill(units));
   }
+
+
   const calculateBill = () => {
     let subsidy = 250;
     let f = 0;
@@ -63,7 +66,7 @@ function App() {
           <label>Enter the units: </label>
           <input type="number" onChange={(e) => setUnits(Number(e.target.value))} />
         </div>
-        <button style={{ marginTop: "10px", }} onClick={handleSubmit}>Calculate</button>
+        <button style={{ marginTop: "10px" }} onClick={handleSubmit}>Calculate</button>
 
 
         <div className="wrapper">

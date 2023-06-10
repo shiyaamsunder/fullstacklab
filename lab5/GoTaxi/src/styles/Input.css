@@ -1,0 +1,57 @@
+.inputWrapper {
+  margin-bottom: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.inputLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.input {
+  border: 2px solid blue;
+  background-color: yellow;
+  color: black;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 4px 8px;
+  height: 30px;
+  width: 60%;
+  transition: all 120ms ease;
+}
+
+.input:focus {
+  outline: 1.8px solid pink;
+  outline-offset: 2px;
+}
+
+.autocomplete {
+  position: absolute;
+  background-color: #242424;
+  width: 160px;
+  top: 46px;
+  right: 8px;
+  z-index: 100;
+  border: 1px solid gray;
+}
+
+.option {
+  width: 100%;
+  padding: 1em 0em;
+  cursor: pointer;
+}
+
+.option:hover {
+  font-weight: 500;
+  background-color: #2f2f2f;
+}
+
+@media (min-width: 768px) {
+  .autocomplete {
+    width: 266px;
+  }
+}
