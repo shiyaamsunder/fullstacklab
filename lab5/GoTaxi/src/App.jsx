@@ -38,6 +38,13 @@ function App() {
   }
 
   const handleBooking = () => {
+    let starting_point = fetchCity(cities, from)
+    let ending_point = fetchCity(cities, to)
+
+    if (!starting_point || !ending_point) {
+      alert('Enter valid cities from the options')
+      return
+    }
     const distance = Math.round(
       haversine(fetchCity(cities, from), fetchCity(cities, to)) / 1000
     ) // calculating the distance
@@ -47,7 +54,7 @@ function App() {
 
   // filtering out a single city
   const fetchCity = (arr, name) => {
-    return arr.filter((c) => c.name === name)[0]
+    return arr.filter((c) => c.name.toLowerCase() === name.toLowerCase())[0]
   }
 
   return (

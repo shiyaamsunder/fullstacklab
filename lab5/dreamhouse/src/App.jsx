@@ -33,7 +33,7 @@ class App extends Component {
     }
 
     const down_payment = 0.25 * total_cost
-    const savings_per_year = portion_saved * annual_salary
+    const savings_per_year = portion_saved * 100 * annual_salary
     const savings_per_month = savings_per_year / 12
     const total_months_needed = down_payment / savings_per_month
 
@@ -65,7 +65,8 @@ class App extends Component {
               <input
                 className='input'
                 value={this.state.portion_saved}
-                max={100}
+                min={0}
+                max={1}
                 placeholder='Should be in percentage'
                 name='portion_saved'
                 onChange={this.handleChange}
