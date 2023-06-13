@@ -17,7 +17,14 @@ const InputWrapper = ({ name, labelText, children }) => {
 export const Input = ({ labelText, name, type, ...rest }) => {
   return (
     <InputWrapper labelText={labelText} name={name}>
-      <input type={type} name={name} id={name} className='input' {...rest} />
+      <input
+        type={type}
+        autoComplete='off'
+        name={name}
+        id={name}
+        className='input'
+        {...rest}
+      />
     </InputWrapper>
   )
 }
@@ -42,7 +49,7 @@ Input.Combobox = ({ labelText, name, options = [], ...rest }) => {
   )
 }
 
-Input.AutoComplete = function ({
+Input.AutoComplete = function({
   labelText,
   name,
   options = [],
@@ -70,6 +77,7 @@ Input.AutoComplete = function ({
     <InputWrapper labelText={labelText} name={name}>
       <input
         ref={innerRef}
+        autoComplete='off'
         type='text'
         name={name}
         id={name}

@@ -1,6 +1,4 @@
 import '../styles/BookingSlip.css'
-import SUV from '../assets/suv.png'
-import Sedan from '../assets/sedan.png'
 import Odometer from '../assets/odometer.png'
 
 export const BookingSlip = ({ from, to, carOption, price }) => {
