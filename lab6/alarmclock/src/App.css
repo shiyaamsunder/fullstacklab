@@ -9,6 +9,56 @@ main {
   margin: 0 auto;
 }
 
+.selectHours {
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hours__wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.change {
+  border: 1px solid gray;
+  padding: 0.5rem 0rem;
+}
+
+.hours {
+  height: 82px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 5px 5px 11px 9px #000000;
+  font-size: 2.5rem;
+}
+
+.moveup {
+  animation: moveup linear 1s infinite;
+}
+
+.movedown {
+  animation: movedown linear 1s infinite;
+}
+@keyframes moveup {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(-20vh);
+  }
+}
+
+@keyframes movedown {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(20vh);
+  }
+}
 @media (min-width: 768px) {
   .currentTime {
     font-size: 6rem;
