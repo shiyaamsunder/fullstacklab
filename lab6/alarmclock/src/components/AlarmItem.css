@@ -1,0 +1,9 @@
+.alarm__item__wrapper {
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.alarm__item__time {
+}
