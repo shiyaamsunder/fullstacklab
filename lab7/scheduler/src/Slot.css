@@ -1,0 +1,22 @@
+.slottable {
+  border-spacing: 5px;
+}
+.slottable td {
+  border: 1px solid gray;
+  margin: 0.2rem;
+  text-align: center;
+}
+.slottable td p {
+}
+
+.top {
+  background-color: gray;
+  color: white;
+}
+
+.item {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
