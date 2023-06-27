@@ -25,11 +25,11 @@ export default function Slot() {
     <table className='slottable'>
       <thead>
         <tr>
-          <td>Day/Slot</td>
-          <td>Slot 1</td>
-          <td>Slot 2</td>
-          <td>Slot 3</td>
-          <td>Slot 4</td>
+          <th>Day/Slot</th>
+          <th>Slot 1</th>
+          <th>Slot 2</th>
+          <th>Slot 3</th>
+          <th>Slot 4</th>
         </tr>
       </thead>
       <tbody>

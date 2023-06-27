@@ -1,7 +1,8 @@
 .slottable {
   border-spacing: 5px;
 }
-.slottable td {
+.slottable td,
+th {
   border: 1px solid gray;
   margin: 0.2rem;
   text-align: center;
