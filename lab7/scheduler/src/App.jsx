@@ -233,7 +233,7 @@ const reducer = (state, action) => {
           if (slot.id == slotId) {
             return {
               ...slot,
-              slots_left: slot.slots_left--,
+              slots_left: slot.slots_left - action.team.length,
             }
           } else {
             return slot
